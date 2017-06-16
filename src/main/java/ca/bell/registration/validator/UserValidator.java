@@ -28,15 +28,34 @@ public class UserValidator implements Validator {
 
     private void validateUsername(final User user, final Errors errors) {
 
-        if (isBlank(user.getUsername()) || user.getUsername().length() < 5 || user.getUsername().length() > 255) {
+        if (isBlank(user.getUsername()) || user.getUsername().length() < 1 || user.getUsername().length() > 255) {
 
-            errors.rejectValue("username", null, "Le username est obligatoire (min 5 max 255)");
+            errors.rejectValue("username", null, "Le username est obligatoire (min 1 max 255)");
+        }
+    }
+
+    private void validatePassword(final User user, final Errors errors) {
+
+        if (isBlank(user.getPassword()) || user.getPassword().length() < 1 || user.getPassword().length() > 255) {
+
+            errors.rejectValue("password", null, "Le password est obligatoire (min 1 max 255)");
         }
     }
 
     private void validateFirstName(final User user, final Errors errors) {
-        // TODO: complet...
+
+        if (isBlank(user.getFirstName()) || user.getFirstName().length() > 255) {
+
+            errors.rejectValue("firstName", null, "Le first name a un max de 255");
+        }
     }
 
-    // TODO: autre valication
+    private void validateLastName(final User user, final Errors errors) {
+
+        if (isBlank(user.getLastName()) || user.getLastName().length() > 255) {
+
+            errors.rejectValue("lastName", null, "Le last name a un max de 255");
+        }
+    }
+
 }

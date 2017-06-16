@@ -3,6 +3,7 @@ package ca.bell.registration.service.implementation;
 import ca.bell.registration.dto.UserDTO;
 import ca.bell.registration.exception.ErrorException;
 import ca.bell.registration.exception.GenericException;
+import ca.bell.registration.exception.NotFoundException;
 import ca.bell.registration.mapper.UserMapper;
 import ca.bell.registration.model.User;
 import ca.bell.registration.repository.UserRepository;
@@ -41,6 +42,15 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user)
                 .flatMap(userMapper::convertToDto)
                 .orElseThrow(ErrorException::new);
+    }
+
+    @Override
+    public UserDTO findByUsername(String username) throws GenericException {
+        Assert.notNull(username, "The username is required.");
+
+        return userRepository.findByUsername(username)
+                .flatMap(userMapper::convertToDto)
+                .orElseThrow(NotFoundException::new);
     }
 
 

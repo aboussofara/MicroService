@@ -4,16 +4,16 @@ import javax.validation.constraints.Size;
 
 public class UserDTO {
 
-//    @Size(min = 5, max = 255, message = "Le username est obligatoire (min 5 max 255)")
+    @Size(min = 1, max = 255, message = "Le username est obligatoire (min 1 max 255)")
     private String username;
 
-    @Size(min = 5, max = 255, message = "TODO:Complet")
+    @Size(min = 1, max = 255, message = "Password required (min 1 max 255 chars)")
     private String password;
 
-    @Size(min = 5, max = 255, message = "TODO:Complet")
+    @Size(max = 255, message = "First name cannot be longer than 255 chars")
     private String firstName;
 
-    @Size(min = 5, max = 255, message = "TODO:Complet")
+    @Size(max = 255, message = "Last name cannot be longer than 255 chars")
     private String lastName;
 
     public String getUsername() {
