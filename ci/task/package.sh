@@ -3,4 +3,6 @@
 set -e -u -x
 
 cd source-code/
-./mvnw package -DproxySet=true -DproxyHost=fastweb.int.bell.ca -DproxyPort=8083
+export http_proxy=http://fastweb.int.bell.ca:8083
+export https_proxy=http://fastweb.int.bell.ca:8083
+./mvnw package
