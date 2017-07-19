@@ -3,6 +3,6 @@
 set -e -u -x
 
 cd source-code/
-export http_proxy=http://fastweb.int.bell.ca:8083
-export https_proxy=http://fastweb.int.bell.ca:8083
+export MAVEN_OPTS=-Dhttp.proxyHost=fastweb.int.bell.ca -Dhttp.proxyPort=8083 -Dhttps.proxyHost=fastweb.int.bell.ca -Dhttps.proxyPort=8083
+env
 ./mvnw package
