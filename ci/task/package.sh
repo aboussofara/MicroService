@@ -4,6 +4,6 @@ set -e -u -x
 echo "checking code for packaging..."
 
 cd source-code/
-./mvnw package
+./mvnw package -DskipTests
 
 cp target/*.jar package-output/.

@@ -11,11 +11,9 @@ jobs:
     plan:
     - get: source-code
       trigger: true
-    - task: run tests
-      privileged: true
-      file: source-code/ci/UnitTests.yml
+    - task: Run tests
+      file: source-code/ci/test.yml
     - task: package
-      privileged: true
       file: source-code/ci/package.yml
     - task: show jar
       config:
