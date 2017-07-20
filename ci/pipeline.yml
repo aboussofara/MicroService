@@ -11,8 +11,6 @@ jobs:
     plan:
     - get: source-code
       trigger: true
-    - task: Run tests
-      file: source-code/ci/test.yml
     - task: package
       file: source-code/ci/package.yml
     - task: show jar
