@@ -7,10 +7,13 @@ resources:
     private_key: {{git-private-key}}
 
 jobs:
-  - name: package
+  - name: Build project
     plan:
     - get: source-code
       trigger: true
+    - task: run tests
+      privileged: true
+      file: source-code/ci/UnitTests.yml 
     - task: package
       privileged: true
       file: source-code/ci/package.yml

@@ -9,8 +9,5 @@ image_resource:
 inputs:
   - name: source-code
 
-outputs:
-  - name: package-output
-
 run:
-  path: "source-code/ci/task/package.sh"
+  path: "source-code/ci/task/tests.sh"
