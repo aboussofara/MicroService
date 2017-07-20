@@ -8,8 +8,6 @@ resources:
 
 jobs:
   - name: package
-  - http_proxy: 142.117.128.44:8083
-  - https_proxy: 142.117.128.44:8083
     plan:
     - get: source-code
       trigger: true
