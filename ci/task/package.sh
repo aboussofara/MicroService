@@ -6,10 +6,6 @@ cd source-code/
 ./mvnw package -DskipTests
 
 pwd
-
-cd ci
-ls
-cd task
-ls
-
-cp target/*.jar package-output/.
+cd ~/package-output
+cd source-code/
+cp target/*.jar ../package-output
