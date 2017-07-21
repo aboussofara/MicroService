@@ -1,4 +1,5 @@
 FROM frolvlad/alpine-oraclejdk8:slim
+CMD pwd 
 VOLUME /tmp
 ADD ../package-output/*.jar app.jar
 RUN sh -c 'touch /app.jar'
