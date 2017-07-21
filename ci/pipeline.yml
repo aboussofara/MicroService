@@ -6,6 +6,14 @@ resources:
     branch: master
     private_key: {{git-private-key}}
 
+- name: docker-image-to-docker-register
+  type: docker-image
+  source:
+    repository: htsq-stats-engine.cms.9c9media.net:5000/admin
+    insecure_registries: ["htsq-stats-engine.cms.9c9media.net:5000"]
+    username: admin
+    password: admin
+
 jobs:
   - name: Build project
     plan:
@@ -13,18 +21,6 @@ jobs:
       trigger: true
     - task: package
       file: source-code/ci/package.yml
-    - task: show jar
-      config:
-        platform: linux
-        inputs:
-        - name: source-code
-        - name: package-output
-        image_resource:
-          type: docker-image
-          source: {repository: ubuntu}
-        run:
-          path: sh
-          args:
-          - -exc
-          - |
-            ls ./package-output
+    - put: docker-image-to-docker-register
+      params:
+        build: source-code
