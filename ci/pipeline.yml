@@ -20,7 +20,7 @@ resources:
     client_certs:
     - domain: 10.1.175.107:5000
       cert: {{docker-registry_cert}}
-      key: {{docker-registry_cert}}
+      key: {{docker-registry_key}}
 
 
 jobs:
