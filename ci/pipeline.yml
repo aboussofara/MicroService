@@ -14,7 +14,7 @@ resources:
     insecure_registries: ["10.1.175.107:5000"]
     username: admin
     password: admin
-    skip_cert_check: true
+    skip_ssl_verification: true
 
 jobs:
   - name: Build project
