@@ -14,6 +14,9 @@ resources:
     insecure_registries: ["10.1.175.107:5000"]
     username: admin
     password: admin
+    ca_certs:
+    - domain: 10.1.175.107:5000
+      cert: {{docker-registry_cert}}
     client_certs:
     - domain: 10.1.175.107:5000
       cert: {{docker-registry_cert}}
