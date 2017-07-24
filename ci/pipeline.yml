@@ -13,7 +13,7 @@ resources:
     tag: "latest"
     insecure_registries: ["10.1.175.107:5000"]
     username: admin
-    password: admin
+    password: admin123
     ca_certs:
     - domain: 10.1.175.107:5000
       cert: {{docker-registry_cert}}
