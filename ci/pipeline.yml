@@ -9,9 +9,18 @@ resources:
 - name: docker-image-to-docker-register
   type: docker-image
   source:
-    repository: index.docker.io/bellmediatest/bellmedia
-    username: bellmediatest
-    password: Bmanita_1899
+    repository: 10.1.175.107:5000/admin
+    tag: "latest"
+    insecure_registries: ["10.1.175.107:5000"]
+    username: admin
+    password: admin123
+    ca_certs:
+    - domain: 10.1.175.107:5000
+      cert: {{docker-registry_cert}}
+    client_certs:
+    - domain: 10.1.175.107:5000
+      cert: {{docker-registry_cert}}
+      key: {{docker-registry_key}}
 
 
 jobs:
