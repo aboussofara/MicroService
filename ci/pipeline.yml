@@ -8,7 +8,7 @@ resources:
 - name: docker-image-to-docker-register
   type: docker-image
   source:
-    repository: bellmediatest/bellmedia
+    repository: bellmediatest/registry
     email: amine.boussofara@bellmedia.ca
     username: bellmediatest
     password: Bmanita_1899
